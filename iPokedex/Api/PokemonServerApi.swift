@@ -11,7 +11,8 @@ import Alamofire
 class PokemonServerApi: ObservableObject {
     @Published var pokemonId: [Int] = []
     @Published var pokemonNames: [String] = []
-    @Published var pokemonType: [[String]] = [[]]
+    @Published var pokemonImage: [String] = []
+    @Published var pokemonGif: [String] = []
     
     func getData(index: Int){
         let url = "https://pokeapi.co/api/v2/pokemon/\(index)"
@@ -27,6 +28,9 @@ class PokemonServerApi: ObservableObject {
                 
                 self.pokemonId.append(decodedData.id ?? 0)
                 self.pokemonNames.append(decodedData.name ?? "")
+                self.pokemonImage.append(decodedData.sprites?.frontDefault ?? "")
+                self.pokemonGif.append(decodedData.sprites?.animated?.frontDefault ?? "")
+                
                 print(decodedData.name ?? "")
                 
             case .failure (let failure):
