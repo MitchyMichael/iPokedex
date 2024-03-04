@@ -8,9 +8,13 @@
 import Foundation
 import Alamofire
 
-class Api: ObservableObject {
+class PokemonServerApi: ObservableObject {
+    @Published var pokemonNames: [String] = []
+    @Published var pokemonType: [[String]] = [[]]
+    
     func getData(index: Int){
-        AF.request("https://pokeapi.co/api/v2/pokemon/\(index)", method: .get).responseData { response in
+        let url = "https://pokeapi.co/api/v2/pokemon/\(index)"
+        AF.request(url, method: .get).responseData { response in
             print(response)
             
             switch response.result {
@@ -20,6 +24,8 @@ class Api: ObservableObject {
                     print("Failed to retrieve data")
                     return
                 }
+                
+                self.pokemonNames.append(decodedData.name)
                 print(decodedData)
             case .failure (let failure):
                 print(failure)
