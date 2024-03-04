@@ -15,6 +15,7 @@
 		FC2ECBE42B8B1F5100DBE877 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FC2ECBE32B8B1F5100DBE877 /* Alamofire */; };
 		FCC383DA2B955BE400714749 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC383D92B955BE400714749 /* PokemonResponse.swift */; };
 		FCC383DD2B955C7100714749 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC383DC2B955C7100714749 /* Pokemon.swift */; };
+		FCC383E12B957A0F00714749 /* OptionallyDecodable in Frameworks */ = {isa = PBXBuildFile; productRef = FCC383E02B957A0F00714749 /* OptionallyDecodable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC2ECBE42B8B1F5100DBE877 /* Alamofire in Frameworks */,
+				FCC383E12B957A0F00714749 /* OptionallyDecodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +116,7 @@
 			name = iPokedex;
 			packageProductDependencies = (
 				FC2ECBE32B8B1F5100DBE877 /* Alamofire */,
+				FCC383E02B957A0F00714749 /* OptionallyDecodable */,
 			);
 			productName = iPokedex;
 			productReference = FC2ECBCE2B8B14F000DBE877 /* iPokedex.app */;
@@ -145,6 +148,7 @@
 			mainGroup = FC2ECBC52B8B14F000DBE877;
 			packageReferences = (
 				FC2ECBE22B8B1F5100DBE877 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FCC383DF2B957A0F00714749 /* XCRemoteSwiftPackageReference "OptionallyDecodable" */,
 			);
 			productRefGroup = FC2ECBCF2B8B14F000DBE877 /* Products */;
 			projectDirPath = "";
@@ -405,6 +409,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		FCC383DF2B957A0F00714749 /* XCRemoteSwiftPackageReference "OptionallyDecodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/idrougge/OptionallyDecodable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -412,6 +424,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC2ECBE22B8B1F5100DBE877 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FCC383E02B957A0F00714749 /* OptionallyDecodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCC383DF2B957A0F00714749 /* XCRemoteSwiftPackageReference "OptionallyDecodable" */;
+			productName = OptionallyDecodable;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

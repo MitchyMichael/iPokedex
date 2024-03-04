@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class PokemonServerApi: ObservableObject {
+    @Published var pokemonId: [Int] = []
     @Published var pokemonNames: [String] = []
     @Published var pokemonType: [[String]] = [[]]
     
@@ -19,14 +20,15 @@ class PokemonServerApi: ObservableObject {
             
             switch response.result {
             case .success(let success):
-                print("Disini \(success)")
                 guard let decodedData = try? JSONDecoder().decode(PokemonResponse.self, from: success) else {
                     print("Failed to retrieve data")
                     return
                 }
                 
-                self.pokemonNames.append(decodedData.name)
-                print(decodedData)
+                self.pokemonId.append(decodedData.id ?? 0)
+                self.pokemonNames.append(decodedData.name ?? "")
+                print(decodedData.name ?? "")
+                
             case .failure (let failure):
                 print(failure)
                 return
