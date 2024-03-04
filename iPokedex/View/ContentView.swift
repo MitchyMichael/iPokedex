@@ -50,11 +50,13 @@ struct ContentView: View {
                                                     case .success(let image):
                                                         // Actual image
                                                         image
-                                                            
+                                                            .frame(height: 100)
                                                         // Apply resizable to the image
                                                     case .failure:
                                                         // Error placeholder or message
                                                         Text("Failed to load image")
+                                                            .foregroundStyle(.red)
+                                                            .padding(.bottom)
                                                     @unknown default:
                                                         // Handle unknown cases
                                                         EmptyView()
